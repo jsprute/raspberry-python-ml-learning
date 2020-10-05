@@ -52,6 +52,7 @@ if __name__ == "__main__":
 	
 	# Save a copy for the output plot
 	y0 = y 
+	
 	X = np.c_[np.ones((X.shape[0], 1)), X]
 	y = y[:, np.newaxis]
 	theta = np.zeros((X.shape[1], 1))
