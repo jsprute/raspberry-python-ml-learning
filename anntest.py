@@ -1,6 +1,6 @@
 
 # Import libs
-from ANN import  ANN
+from ann import  ANN
 
 # Create input data vector
 inputT = [0.8, 0.5, 0.6]
