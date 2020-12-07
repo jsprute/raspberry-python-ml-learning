@@ -50,4 +50,21 @@ class ANN:
         self.inputT = np.array(inputT, ndmin=2).T
         self.train = np.array(train, ndmin=2).T
 
+        # Multiply inputT array wtgih
+        self.hInputT = np.dot(self.wtgih, self.inputT)
+
+        # Apply activation function
+        self.hOutputT = 1/(1 + np.exp(-self.hInputT))
+
+        # Calculate output errors
+        self.eOutput = self.train - self.oOutputT
+
+        #Calculate hidden layer error array
+        self.hError = np.dot(self.wtgh.T, self.eOutput)
+
+        # Update weight matrix wtgho
+        self.wtgho += self.lr * np.dot((self.eOutput*self.eOutputT*(1 - self.oOutputT)), self.hOutputT.T)
+
+        # Update weight matrix wtgih
+        self.wtgih += self.lr * np.dot((self.hError*self.hOutputT*(1 - self.hOutputT)), self.inputT.T)
 
