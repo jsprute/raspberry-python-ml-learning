@@ -40,12 +40,14 @@ class ANN:
 
         # Apply activation function
         oOutput = 1 / (1 + np.exp(-oInput))
+        
+        return oOutput
 
     def trainNet(self, inputT, train):
         # This module depends on values, arrays, and matrices
         # created when the init module is run
         # Create the arrays from the list arguments
         self.inputT = np.array(inputT, ndmin=2).T
-        self.train = np.arrat(train, ndmin=2).T
+        self.train = np.array(train, ndmin=2).T
 
 
