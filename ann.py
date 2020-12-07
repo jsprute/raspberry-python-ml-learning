@@ -56,15 +56,21 @@ class ANN:
         # Apply activation function
         self.hOutputT = 1/(1 + np.exp(-self.hInputT))
 
+        # Multiply hidden layer output by wtgho
+        self.oInputT = np.dot(self.wtgho, self.hOutputT)
+        
+        # Apply activation function
+        self.oOutputT = 1/(1 + np.exp(-self.oInputT))
+
         # Calculate output errors
         self.eOutput = self.train - self.oOutputT
 
         #Calculate hidden layer error array
-        self.hError = np.dot(self.wtgh.T, self.eOutput)
+        self.hError = np.dot(self.wtgho.T, self.eOutput)
 
         # Update weight matrix wtgho
-        self.wtgho += self.lr * np.dot((self.eOutput*self.eOutputT*(1 - self.oOutputT)), self.hOutputT.T)
+        self.wtgho += self.lr * np.dot((self.eOutput * self.oOutputT * (1 - self.oOutputT)), self.hOutputT.T)
 
         # Update weight matrix wtgih
-        self.wtgih += self.lr * np.dot((self.hError*self.hOutputT*(1 - self.hOutputT)), self.inputT.T)
+        self.wtgih += self.lr * np.dot((self.hError * self.hOutputT * (1 - self.hOutputT)), self.inputT.T)
 

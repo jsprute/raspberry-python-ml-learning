@@ -3,7 +3,7 @@
 from ann import  ANN
 
 # Create input data vector
-inputT = [0.8, 0.5, 0.6]
+inputT = [0.2, 0.9, 0.4]
 
 # Display it
 print('Input data vector')
@@ -28,5 +28,16 @@ output = ann.testNet(inputT)
 
 # Display output
 print('After 500 iterations')
+print(output)
+print()
+
+#Train for 499 interations
+for i in range(500):
+    ann.trainNet(inputT, train)
+
+output = ann.testNet(inputT)
+
+# Display output
+print('After 1000 iterations')
 print(output)
 print()
