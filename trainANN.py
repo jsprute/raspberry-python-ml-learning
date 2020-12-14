@@ -1,10 +1,10 @@
 # Import required libraries
 import numpy as np
 import matplotlib.pyplot as plt
-from ANN import ANN
+from ann import ANN
 
 # Set up the ANN configuration
-inode = 784
+inode = 785
 hnode = 100
 onode = 10
 
