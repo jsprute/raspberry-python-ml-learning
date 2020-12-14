@@ -27,3 +27,17 @@ for record in dataList:
     train[int(recordx[0])] = 0.99
     # Training begins here
     ann.trainNet(inputT, train)
+
+# Iterate through all 10 test records and display output
+# data vectors
+for record in testDataList:
+    recordz = record.split(',')
+    # Determine record's
+    labelz = int(recordz[0])
+    # Adjust record values for ANN
+    inputz = (np.asfarray(recordz[1:])/255.0*0.99)+0.01
+    outputz = ann.testNet(inputz)
+    print('output for label = ', labelz)
+    print(outputz)
+
+
