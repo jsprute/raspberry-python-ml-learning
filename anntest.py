@@ -20,6 +20,14 @@ print('After one iteration')
 print(output)
 print()
 
+matrixList = ann.getMatrices()
+print('wtgih matrix')
+print(matrixList[0])
+print()
+print('wtgho matrix')
+print(matrixList[1])
+print()
+
 #Train for 499 interations
 for i in range(499):
     ann.trainNet(inputT, train)
@@ -31,7 +39,16 @@ print('After 500 iterations')
 print(output)
 print()
 
-#Train for 499 interations
+matrixList = ann.getMatrices()
+print('wtgih matrix')
+print(matrixList[0])
+print()
+print('wtgho matrix')
+print(matrixList[1])
+print()
+
+
+#Train for 500 interations
 for i in range(500):
     ann.trainNet(inputT, train)
 
@@ -40,4 +57,12 @@ output = ann.testNet(inputT)
 # Display output
 print('After 1000 iterations')
 print(output)
+print()
+
+matrixList = ann.getMatrices()
+print('wtgih matrix')
+print(matrixList[0])
+print()
+print('wtgho matrix')
+print(matrixList[1])
 print()
