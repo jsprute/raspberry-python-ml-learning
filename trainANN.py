@@ -19,6 +19,11 @@ dataFile = open('./data/mnist_train_100.csv')
 dataList = dataFile.readlines()
 dataFile.close()
 
+# Create the test list data
+testDataFile = open('mnist_test_10.csv')
+testDataList = testDataFile.readlines()
+testDataFile.close()
+
 # Train the ANN using all the records in the list
 for record in dataList:
     recordx = record.split(',')
