@@ -42,7 +42,16 @@ for record in testDataList:
     # Adjust record values for ANN
     inputz = (np.asfarray(recordz[1:])/255.0*0.99)+0.01
     outputz = ann.testNet(inputz)
-    print('output for label = ', labelz)
-    print(outputz)
+    #print('output for label = ', labelz)
+    #print(outputz)
+    max_value = np.argmax(outputz)
+    if max_value == labelz:
+        match = match + 1
+    else:
+        no_match = no_match + 1
+    print('Expected {0} and received {1}'.format(labelz, max_value))
+    success = float(match) / float(match + no_match)
+print('success rate = {0}'.format(success))
+
 
 
