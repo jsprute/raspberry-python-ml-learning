@@ -35,6 +35,8 @@ for record in dataList:
 
 # Iterate through all 10 test records and display output
 # data vectors
+match = 0
+no_match = 0
 for record in testDataList:
     recordz = record.split(',')
     # Determine record's
