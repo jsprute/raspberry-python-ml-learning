@@ -20,7 +20,7 @@ dataList = dataFile.readlines()
 dataFile.close()
 
 # Create the test list data
-testDataFile = open('mnist_test_10.csv')
+testDataFile = open('./data/mnist_test_10.csv')
 testDataList = testDataFile.readlines()
 testDataFile.close()
 
