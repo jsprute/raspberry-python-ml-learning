@@ -15,7 +15,8 @@ lr = 0.2
 ann = ANN(inode, hnode, onode, lr)
 
 # Create the training list data
-dataFile = open('./data/mnist_train_100.csv')
+#dataFile = open('./data/mnist_train_100.csv')
+dataFile = open('./data/mnist_train.csv')
 dataList = dataFile.readlines()
 dataFile.close()
 
