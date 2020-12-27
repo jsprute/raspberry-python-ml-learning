@@ -17,11 +17,6 @@ lr = 0.1
 ann = ANN(inode, hnode, onode, lr)
 
 # Create the training list data
-#dataFile = open('./data/mnist_train_100.csv')
-dataFile = open('./data/mnist_train.csv')
-dataList = dataFile.readlines()
-dataFile.close()
-
 # Create the test list data
 dataFile = open('./data/mnist_train.csv')
 dataList = dataFile.readlines()
@@ -37,7 +32,7 @@ for record in dataList:
     ann.trainNet(inputT, train)
 
 # Create the test list data from an image
-img = Image.open('zerobw.jpg')
+img = Image.open('./images/image-two.jpg')
 img = img.resize((28, 28), PIL.Image.ANTIALIAS)
 
 # Read pixels into list
@@ -48,10 +43,10 @@ pixels = [i[0] for i in pixels]
 
 # Save to a temp file names test.csv with comma delimiters
 imgTmp = np.array(pixels)
-imgTmp.tofile('test.csv',sep=',')
+imgTmp.tofile('./data/test.csv',sep=',')
 
 # Open the temp file and read into list
-testDataFile = open('test.csv')
+testDataFile = open('./data/test.csv')
 testDataList = testDataFile.readlines()
 testDataFile.close()
 
