@@ -6,7 +6,7 @@ import PIL
 from PIL import Image
 
 # Set up the ANN configuration
-inode = 785
+inode = 784
 hnode = 100
 onode = 10
 
@@ -24,7 +24,7 @@ dataFile.close()
 
 # Train the ANN using all the records in the list
 for record in dataList:
-    recordx = record.split(',')
+    recordx = record.split(',')[1:285]
     inputT = (np.asfarray(recordx[:])/255.0*0.99) + 0.01
     train = np.zeros(onode) + 0.01
     train[int(recordx[0])] = 0.99
@@ -52,7 +52,7 @@ testDataFile.close()
 
 # Iterate through all list elements
 for record in testDataList: 
-    recordx = (record + ',0').split(',')
+    recordx = record.split(',')
     # Adjust record values for ANN
     input = (np.asfarray(recordx[0:])/255.0*0.99)+0.01
     output = ann.testNet(input)
