@@ -52,7 +52,7 @@ testDataFile.close()
 
 # Iterate through all list elements
 for record in testDataList: 
-    recordx = record.split(',')
+    recordx = (record + ',0').split(',')
     # Adjust record values for ANN
     input = (np.asfarray(recordx[0:])/255.0*0.99)+0.01
     output = ann.testNet(input)
