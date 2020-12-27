@@ -24,8 +24,8 @@ dataFile.close()
 
 # Train the ANN using all the records in the list
 for record in dataList:
-    recordx = record.split(',')[1:285]
-    inputT = (np.asfarray(recordx[:])/255.0*0.99) + 0.01
+    recordx = record.split(',')
+    inputT = (np.asfarray(recordx[1:785])/255.0*0.99) + 0.01
     train = np.zeros(onode) + 0.01
     train[int(recordx[0])] = 0.99
     # Training begins here
