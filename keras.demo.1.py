@@ -11,7 +11,7 @@ seed = 42
 np.random.seed(seed)
 
 # Load the MNIST dataset into training and test datasets.
-(X_trains, y_train), (X_test, y_test) = mnist.load_data()
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
 
 # Flatten the 28 x 28 image into a 784 element input data vector
 num_pixels = X_train.shape[1] * X_train.shape[2]
