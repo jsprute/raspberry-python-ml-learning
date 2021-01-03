@@ -10,8 +10,9 @@ from keras.layers.convolutional import Conv2D
 from keras.layers.convolutional import MaxPooling2D
 from keras.utils import np_utils
 from keras import backend as K
-K.set_image_dim_ordering('th')
 
+#K.set_image_dim_ordering('th')
+K.image_data_format()
 # Set a random seed
 seed = 42
 np.random.seed(seed)
