@@ -44,7 +44,7 @@ test_images = test_images / 255.0
 
 # One hot encoding
 train_labels = np_utils.to_categorical(train_labels)
-test_labels = np_utils.to_categorical(test_lables)
+test_labels = np_utils.to_categorical(test_labels)
 class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle Boot'] 
 
 # Model definition
