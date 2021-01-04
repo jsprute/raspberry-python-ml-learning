@@ -71,7 +71,7 @@ def cnn_model():
 
 # Run the demo and evaluate it
 model = cnn_model()
-model.fit(train_images,train_labels, validation_data=(test_images, test_labels), epochs=10, batch_size=200, verbose=2)
+model.fit(train_images, train_labels, validation_data=(test_images, test_labels), epochs=10, batch_size=200, verbose=2) 
 
 # final evaluation
 scores = model.evaluate(test_images, test_labels, verbose=0)
