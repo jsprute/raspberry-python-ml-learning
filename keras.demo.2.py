@@ -35,8 +35,9 @@ np.random.seed(seed)
 # Flatten all of the 28 x 28 images into 784 element numpty input
 # data vectors.
 pixelNum = train_images.shape[1] * train_images.shape[2]
-train_images = train_images.reshape(train_images.shape[0],1,28,28).astype('float32')
-test_images = test_images.reshape(test_images.shape[0],1,28,28).astype('float32')
+train_images.reshape(train_images.shape[0],1,28,28).astype('float32') 
+test_images = test_images.reshape(test_images.shape[0],1,28,28).astype('float32') 
+
 
 # Normalize inputs from 0-255 to 0-1
 train_images = train_images / 255.0
@@ -46,6 +47,7 @@ test_images = test_images / 255.0
 train_labels = np_utils.to_categorical(train_labels)
 test_labels = np_utils.to_categorical(test_labels)
 class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle Boot'] 
+numClass = test_labels.shape[1]
 
 # Model definition
 def cnn_model():
