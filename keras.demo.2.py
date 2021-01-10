@@ -13,7 +13,7 @@ from keras import backend as K
 
 #K.set_image_dim_ordering('th')
 K.image_data_format()
-K.set_image_data_format()
+K.set_image_data_format('channels_first')
 
 # Set a random seed
 seed = 42
@@ -59,7 +59,7 @@ def cnn_model():
     # Pooling layer
     model.add(MaxPooling2D(pool_size=(2, 2)))
     # Dropout layer
-    model.ad(Dropout(0.2))
+    model.add(Dropout(0.2))
     # Flatten layer
     model.add(Flatten())
     # Full connection layer
