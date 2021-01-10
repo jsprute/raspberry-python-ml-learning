@@ -13,8 +13,7 @@ from keras import backend as K
 
 #K.set_image_dim_ordering('th')
 K.image_data_format()
-K.set_image_data_format(data_format)
-#K.image_data_format()
+K.set_image_data_format()
 
 # Set a random seed
 seed = 42
