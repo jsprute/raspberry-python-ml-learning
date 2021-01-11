@@ -17,7 +17,7 @@ np.random.seed(seed)
 
 # Flatten all of the 28 x 28 images into the 784 element numpy
 # data vectors
-pixelNum = tain_images.shape[1] * train_images.shape[2]
+pixelNum = train_images.shape[1] * train_images.shape[2]
 train_images = train_images.reshape(train_images.shape[0], 1, 28, 28).astype('float32')
 test_images.reshape(test_images.shape[0],1,28,28).astype('float32')
 
@@ -29,8 +29,10 @@ numClass = test_labels.shape[1]
 # Run the demo and evaluate if
 vgg = VGG()
 model = vgg.build(28, 28, 1, numClass)
-train_images = train_images.reshape(60000, 28, 28, 1)
-test_images = test_images.reshape(10000, 28, 28, 1)
+train_images = train_images.reshape(60000, 1, 28, 28)
+test_images = test_images.reshape(10000, 1, 28, 28)
+#train_images = train_images.reshape(60000, 28, 28, 1)
+#test_images = test_images.reshape(10000, 28, 28, 1)
 model.fit(train_images, train_labels, validation_data=(test_images, test_labels), epochs=10, batch_size=100, verbose=2)
 
 # Final evaluation

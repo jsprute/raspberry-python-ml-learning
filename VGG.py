@@ -21,8 +21,8 @@ class VGG:
         # If we are using "channels first", update the input
         # shape and channels dimesion
         if K.image_data_format() == "channels_first":
-            inputShape = (depth, height, width)
-            chanDim = 1
+                inputShape = (depth, height, width)
+                chanDim = 1
         
         # First CONV => RELU => CONV => RELU => POOL layer
         model.add(Conv2D(32, (3,3), padding="same", input_shape=inputShape))
@@ -49,7 +49,7 @@ class VGG:
         model.add(Dense(512))
         model.add(Activation("relu"))
         model.add(BatchNormalization())
-        model.add(Drop(0.5))
+        model.add(Dropout(0.5))
 
         # Softmax classifier
         model.add(Dense(classes))
