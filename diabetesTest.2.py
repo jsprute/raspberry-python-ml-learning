@@ -33,7 +33,7 @@ def plotHistogram(values, label, feature, title):
     plotOne = sns.FacetGrid(values, hue=label, aspect=2)
     plotOne.map(sns.distplot, feature, kde=False)
     plotOne.set(xlim=(0, values[feature].max()))
-    plotOne.add_legent()
+    plotOne.add_legend()
     plotOne.set_axis_labels(feature, 'Proportion')
     plotOne.fig.suptitle(title)
     plt.show()
