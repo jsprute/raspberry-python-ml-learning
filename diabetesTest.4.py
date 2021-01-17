@@ -22,7 +22,7 @@ def create_model():
 seed = 42
 
 # Load the dataset
-data = pd.read_csv('diabetes.csv')
+data = pd.read_csv('./data/diabetes.csv')
 X = data.iloc[:, :-1]
 y = data.iloc[:, -1]
 
