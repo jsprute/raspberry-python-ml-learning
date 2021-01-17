@@ -31,7 +31,7 @@ print(X_train3.head(10))
 def plotHistogram(values, label, feature, title):
     sns.set_style("whitegrid")
     plotOne = sns.FacetGrid(values, hue=label, aspect=2)
-    plotOne.map(sns.distplot, feature, kde=False)
+    plotOne.map(sns.displot, feature, kde=False)
     plotOne.set(xlim=(0, values[feature].max()))
     plotOne.add_legend()
     plotOne.set_axis_labels(feature, 'Proportion')
