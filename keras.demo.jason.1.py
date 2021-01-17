@@ -38,7 +38,7 @@ def prep_pixels(train, test):
 # Define cnn model
 def define_model():
     model = Sequential()
-    model.add(Conv2D(64, (3, 3), padding="same",activation="relu", kernel_initializer="he_uniform",input_shape(28, 28, 1)))
+    model.add(Conv2D(64, (3, 3), padding="same",activation="relu", kernel_initializer="he_uniform",input_shape=(28, 28, 1)))
     model.add(MaxPooling2D((2,2)))
     model.add(Flatten())
     model.add(Dense(100,activation="relu",kernel_initializer="he_uniform"))
