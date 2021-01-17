@@ -34,4 +34,8 @@ model.add(Dense(1, activation="sigmoid"))
 model.compile(loss='binary_crossentropy', optimizer="adam", metrics=['accuracy'])
 
 # fit the keras model on the dataset
-model.fit(X_train2, y_train, epochs=1)
+model.fit(X_train2, y_train, epochs=150, batch_size=10)
+
+# Evaluate the keras model
+_, accuracy = model.evaluate(X_test2, y_test)
+print('Accuracy: %.2f' % (accuracy*100))
