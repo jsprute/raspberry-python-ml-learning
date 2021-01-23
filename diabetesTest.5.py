@@ -55,9 +55,9 @@ grid_result = grid.fit(X_train2, y_train)
 # Summarize results
 print("Best: %f using %s" % (grid_result.best_score_, grid_result.best_params_))
 means = grid_result.cv_results_['mean_test_score']
-stds = grid_result_.cv_results_['std_test_score']
-params = grid_result_.cv_results_['params']
+stds = grid_result.cv_results_['std_test_score']
+params = grid_result.cv_results_['params']
 for mean, stdev, param in zip(means, stds, params): 
     print("%f (%f) with: %r" % (mean, stdev, param))
 
-    
+
