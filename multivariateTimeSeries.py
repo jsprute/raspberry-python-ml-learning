@@ -58,7 +58,7 @@ model.fit(X, y, epochs=1000, verbose=0)
 
 # Demonstrate prediction
 x_input = array([[200, 125], [300, 175], [400,225]])
-x_input = x_input((1, n_steps, n_features))
+x_input = x_input.reshape((1, n_steps, n_features))
 yhat = model.predict(x_input, verbose=0)
 
 print(yhat)
