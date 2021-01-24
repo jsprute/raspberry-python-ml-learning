@@ -4,7 +4,7 @@ from numpy import hstack
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Flatten
-from keras.layers.confolutional import Conv1D
+from keras.layers.convolutional import Conv1D
 from keras.layers.convolutional import MaxPooling1D
 
 # Split a multivariate sequence into samples
