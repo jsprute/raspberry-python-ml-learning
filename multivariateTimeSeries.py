@@ -8,7 +8,7 @@ from keras.layers.convolutional import Conv1D
 from keras.layers.convolutional import MaxPooling1D
 
 # Split a multivariate sequence into samples
-def split_sequences(sequences, n_steps):
+def split_sequence(sequences, n_steps):
     X, y = list(), list()
     for i in range(len(sequences)):
         # Find the end of this pattern
@@ -46,7 +46,7 @@ n_features = X.shape[2]
 
 # Define model
 model = Sequential()
-model.ad(conv1D(filters=64, kernel_size=2, activation="relu", input_hsape=(n_steps, n_features)))
+model.ad(Conv1D(filters=64, kernel_size=2, activation="relu", input_hsape=(n_steps, n_features)))
 model.add(MaxPooling1D(pool_size=2))
 model.add(Flatten())
 model.add(Dense(50, activation="relu"))
