@@ -6,7 +6,7 @@ def split_sequence(sequence, n_steps):
     X, y = list(), list()
     for i in range(len(sequence)):
         # find the end of the pattern
-        end_ix = i = n_steps
+        end_ix = i + n_steps
         # check if we are beyond the sequence
         if end_ix > len(sequence)-1:
             break
