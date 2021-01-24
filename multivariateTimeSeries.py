@@ -46,7 +46,7 @@ n_features = X.shape[2]
 
 # Define model
 model = Sequential()
-model.ad(Conv1D(filters=64, kernel_size=2, activation="relu", input_hsape=(n_steps, n_features)))
+model.add(Conv1D(filters=64, kernel_size=2, activation="relu", input_hsape=(n_steps, n_features)))
 model.add(MaxPooling1D(pool_size=2))
 model.add(Flatten())
 model.add(Dense(50, activation="relu"))
