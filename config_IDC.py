@@ -6,7 +6,7 @@ ORIG_INPUT_DATASET = "dataset"
 
 # Initialize the base path to the directory that contain the
 # images remaining after the training and testing splits.
-BASE_PATH = "./data/bd"
+BASE_PATH = "./data/bd/"
 
 # Define the training, validation, and testing directory paths.
 TRAIN_PATH = os.path.sep.join([BASE_PATH, "training"])
